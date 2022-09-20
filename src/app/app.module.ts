@@ -9,7 +9,8 @@ import { HomeComponent } from './components/home/home.component';
 import { ProductComponent } from './components/product/product.component';
 import { CartComponent } from './components/cart/cart.component';
 import {HttpClientModule} from '@angular/common/http';
-import { CartItemComponent } from './components/cart/cart-item/cart-item.component'
+import { CartItemComponent } from './components/cart/cart-item/cart-item.component';
+import { RegisterComponent } from './register/register.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +19,8 @@ import { CartItemComponent } from './components/cart/cart-item/cart-item.compone
     HomeComponent,
     ProductComponent,
     CartComponent,
-    CartItemComponent
+    CartItemComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,

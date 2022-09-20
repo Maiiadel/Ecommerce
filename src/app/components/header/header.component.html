@@ -3,12 +3,12 @@
     <div id="top-header">
       <div class="container">
         <ul class="header-links pull-left">
-          <li><a href="#"><i class="fa fa-phone"></i> +021-95-51-84</a></li>
-          <li><a href="#"><i class="fa fa-envelope-o"></i> electronics@email.com</a></li>
-          <li><a href="#"><i class="fa fa-map-marker"></i> 1734 teseen Road-5th settlement</a></li>
+          <li><a routerLink="/"><i class="fa fa-phone"></i> +021-95-51-84</a></li>
+          <li><a routerLink="/"><i class="fa fa-envelope-o"></i> electronics@email.com</a></li>
+          <li><a routerLink="/"><i class="fa fa-map-marker"></i> 1734 teseen Road-5th settlement</a></li>
         </ul>
         <ul class="header-links pull-right">
-          <li><a href="#"><i class="fa fa-user-o"></i> My Account</a></li>
+          <li><a routerLink="/"><i class="fa fa-user-o"></i> My Account</a></li>
         </ul>
       </div>
     </div>
@@ -49,7 +49,7 @@
             <div class="header-ctn">
               <!-- Wishlist -->
               <div>
-                <a href="#">
+                <a routerLink="/">
                   <i class="fa fa-heart-o"></i>
                   <span>Your Wishlist</span>
                   <div class="qty">0</div>
@@ -71,7 +71,7 @@
                         <img src="{{c.product?.image}}" alt="" width="20px">
                       </div>
                       <div class="product-body">
-                        <h3 class="product-name"><a href="#">{{c.product?.name}}</a></h3>
+                        <h3 class="product-name"><a routerLink="/">{{c.product?.name}}</a></h3>
                         <h4 class="product-price"><span class="qty">{{c.numInCart}} x </span>{{c.product?.price | currency:'USD'}}</h4>
                       </div>
                       <button class="delete" (click)="cartService.DeleteProductFromCart(i)"><i class="fa fa-close"></i></button>
@@ -84,8 +84,8 @@
                     <h5>TOTAL : {{cartTotal | currency:'USD'}}</h5>
                   </div>
                   <div class="cart-btns">
-                    <a routerLink="/cart">View Cart</a>
-                    <a routerLink="/checkout">Checkout <i class="fa fa-arrow-circle-right"></i></a>
+                    <a routerLink="/"="/cart">View Cart</a>
+                    <a routerLink="/"="/checkout">Checkout <i class="fa fa-arrow-circle-right"></i></a>
                   </div>
                 </div>
               </div> -->
@@ -93,7 +93,7 @@
   
               <!-- Menu Toogle -->
               <div class="menu-toggle">
-                <a href="#">
+                <a routerLink="/">
                   <i class="fa fa-bars"></i>
                   <span>Menu</span>
                 </a>
@@ -119,10 +119,10 @@
       <div id="responsive-nav">
         <!-- NAV -->
         <ul class="main-nav nav py-3">
-          <li class="active"><a href="#">Home</a></li>
-          <li><a href="#">Categories</a></li>
-          <li><a href="#">Games</a></li>
-          <li><a href="#">Contact Us</a></li>
+          <li class="active"><a routerLink="/">Home</a></li>
+          <li><a routerLink="/">Categories</a></li>
+          <li><a routerLink="/">Games</a></li>
+          <li><a routerLink="/">Contact Us</a></li>
         </ul>
         <!-- /NAV -->
       </div>
