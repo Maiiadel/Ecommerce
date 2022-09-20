@@ -9,7 +9,7 @@ import { ProductService } from 'src/app/product.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  products:Product[]=[]
+  products:any;
   @Input() productItem!: Product
   constructor(private productService:ProductService,private msg: MessangerService) { }
 
@@ -17,9 +17,12 @@ export class HomeComponent implements OnInit {
     // this.productService.getAllProducts().subscribe(next:(prods)=>{
     //   this.products=prods;
     // })
-    this.products= this.productService.getAllProducts();
-
+  this.productService.getAllProducts().subscribe(data=>{
+    this.products=data;
+    // console.log(data);
+    });
   }
+
   handleAddToCart(){
     this.msg.sendMsg(this.productItem)
   }

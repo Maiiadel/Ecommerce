@@ -7,20 +7,21 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ProductService {
-  products:Product[]=[{id:100,name:'camera',image:'./../../../assets/img/shop02.png',category:'electronics',description:'Taking photos and making memories',price:1000,stock:10}]
+  products:any;
+  // products:Product[]=[{id:100,name:'camera',image:'./../../../assets/img/shop02.png',category:'electronics',description:'Taking photos and making memories',price:1000,stock:10}]
   constructor(private Myhttp: HttpClient) {}
 
   // to fetch products from Database 
- getAllProducts():Product[]/*Observable<Product>*/{
-  console.log(this.Myhttp.get("localhost:3000/products"));
+ getAllProducts():Observable<any>/*Observable<Product>*/{
+  // console.log(this.Myhttp.get("localhost:3000/products"));
     //  return this.Myhttp.get<Product>("localhost:3000/products");  /*for connecting with backend*/
+    this.products=this.Myhttp.get(`http://localhost:3000/products`);    
     return this.products;
  }
 
  // getting single product
- getSingleProduct(id:Number):Product /*Observable<Product>*/ {
-  // return this.Myhttp.get<Product>(`http://localhost:3000/products/${id}`); /*for connecting with backend*/
-return this.products[0];
+ getSingleProduct(id:string):Observable<any> /*Observable<Product>*/ {
+  return this.Myhttp.get(`http://localhost:3000/products/${id}`);
 }
 
 //getting product by category

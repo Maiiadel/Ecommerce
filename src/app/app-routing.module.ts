@@ -4,12 +4,19 @@ import { CartComponent } from './components/cart/cart.component';
 import { HomeComponent } from './components/home/home.component';
 import { ProductComponent } from './components/product/product.component';
 
-const routes: Routes = [{path:'',component:HomeComponent}
-,{path:'product/:id',component:ProductComponent},
-{path:'cart',component:CartComponent}];
+const routes: Routes = [
+  {path:'', redirectTo:'home', pathMatch:'full'},
+  {path:'home',component:HomeComponent},
+  {path:'product/:id',component:ProductComponent},
+  {path:'cart',component:CartComponent}
+];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  imports: [
+    RouterModule.forRoot(routes)
+  ],
+  exports: [
+    RouterModule
+  ]
 })
 export class AppRoutingModule { }
